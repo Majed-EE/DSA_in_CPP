@@ -228,77 +228,163 @@ using namespace std;
 
 // 14. Structures, Unions & Enums in C++ | 14
 // Define a struct
-struct Person {
-    string name;
-    int age;
-    float height;
-};
-typedef struct employee
-{
-    int eId;
-    char facChar;
-    float salary;
+// struct Person {
+//     string name;
+//     int age;
+//     float height;
+// };
+// typedef struct employee
+// {
+//     int eId;
+//     char facChar;
+//     float salary;
 
-}ep;
+// }ep;
 
-// //application of struct
-// Used for data modeling (e.g., students, employees, vehicles).
-// Groups related attributes without requiring methods (unlike classes).
-// Can be used in linked lists, trees, and other data structures.
+// // //application of struct
+// // Used for data modeling (e.g., students, employees, vehicles).
+// // Groups related attributes without requiring methods (unlike classes).
+// // Can be used in linked lists, trees, and other data structures.
 
-// define union 
-union myUnion {
-    int i;
-    char car;
-    float f;
-};
+// // define union 
+// union myUnion {
+//     int i;
+//     char car;
+//     float f;
+// };
 
-// //application of enum
-// Purpose: Groups multiple variables sharing the same memory space.
-// Memory: Allocates memory equal to the largest member.
-// Use Case: Useful when only one of the variables is needed at a time
+// // //application of enum
+// // Purpose: Groups multiple variables sharing the same memory space.
+// // Memory: Allocates memory equal to the largest member.
+// // Use Case: Useful when only one of the variables is needed at a time
 
 
-// // application of enum
-// Defining categories (e.g., colors, days, directions).
-// State management (e.g., traffic lights, game states).
-// Improves readability compared to using integer constants
-int main(){
-     // Create an instance of struct
-    Person p1;
-    ep harry;
-    // creating union
-    myUnion u;
-    //creating enumns
-    enum Meal{ breakfast, lunch, dinner};
+// // // application of enum
+// // Defining categories (e.g., colors, days, directions).
+// // State management (e.g., traffic lights, game states).
+// // Improves readability compared to using integer constants
+// int main(){
+//      // Create an instance of struct
+//     Person p1;
+//     ep harry;
+//     // creating union
+//     myUnion u;
+//     //creating enumns
+//     enum Meal{ breakfast, lunch, dinner};
     
-    u.i=32;
+//     u.i=32;
 
 
-    cout<<"the value of i is "<<u.i<<endl;
+//     cout<<"the value of i is "<<u.i<<endl;
 
-    harry.eId = 1;
-    harry.facChar = 'A';
-    harry.salary = 50000.0;
+//     harry.eId = 1;
+//     harry.facChar = 'A';
+//     harry.salary = 50000.0;
 
-    // Assign values to members
-    p1.name = "Alice";
-    p1.age = 25;
-    p1.height = 5.6;
+//     // Assign values to members
+//     p1.name = "Alice";
+//     p1.age = 25;
+//     p1.height = 5.6;
 
-    // Print struct values
-    cout << "Name: " << p1.name << endl;
-    cout << "Age: " << p1.age << endl;
-    cout << "Height: " << p1.height << " feet" << endl;
+//     // Print struct values
+//     cout << "Name: " << p1.name << endl;
+//     cout << "Age: " << p1.age << endl;
+//     cout << "Height: " << p1.height << " feet" << endl;
     
-    return 0;
-}
+//     return 0;
+// }
 
 
 
 
 // 15. Functions & Function Prototypes in C++ |
+
+// Function prototype
+// type function-name (arguments);
+// int sum(int a, int b); //--> Acceptable
+// int sum(int a, b); //--> Not Acceptable
+// int sum(int, int); //--> Acceptable
+// // void g(void); //--> Acceptable
+// void g(); //--> A
+// // is int name at the top important?
+// int main(){
+//     int num1, num2;
+//     cout<<"Enter first number"<<endl;
+//     cin>>num1;
+//     cout<<"Enter second number"<<endl;
+
+//     cin>>num2;
+//     // num1 and num2 are actual parameters
+//     cout<<"The sum is "<<sum(num1, num2);
+//     g();
+//     return 0;
+//     }
+// int sum(int a, int b){
+// // Formal Parameters a and b will be taking values from actual parameters num1 and num2.
+// int c = a+b;
+// return c;
+// }
+// void g(){
+// cout<<"\nHello, Good Morning";
+// }
+
 // 16. Call by Value & Call by Reference in C++ |
+// exercise --> Swap using pointers
+// need to do pointers exercise
+
+
 // 17. Inline Functions, Default Arguments & Constant Arguments in C++ |
+
+
+// inline void display() {
+//     cout << "Hello from an inline function!" << endl;
+// }
+
+// int main() {
+//     display(); // No function call overhead (code is directly inserted)
+//     return 0;
+// }
+
+
+
 // 18. Recursions & Recursive Functions in C++ |
+// int factorial(int n){
+//     if (n<=1){
+//     return 1;
+//     }
+//     return n * factorial(n-1);
+//     }
+//     int main(){
+//         int a;
+//     cout<<"Enter a number"<<endl;
+//     cin>>a;
+//     cout<<"The factorial of "<<a<< " is "<<factorial(a)<<endl;
+//     return 0;
+// }
+
 // 19. Function Overloading with Examples in C++ | 19
+// Function Overloading allows multiple functions with the same name but different parameters.
+// The compiler determines which function to call based on the number and type of arguments
+// Function to add two integers
+
+
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function to add three integers
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+// Function to add two floats
+float add(float a, float b) {
+    return a + b;
+}
+
+int main() {
+    cout << "Sum of 2 and 3: " << add(2, 3) << endl;          // Calls int add(int, int)
+    cout << "Sum of 2, 3, and 4: " << add(2, 3, 4) << endl;  // Calls int add(int, int, int)
+    cout << "Sum of 2.5 and 3.5: " << add(2.5f, 3.5f) << endl; // Calls float add(float, float)
+    return 0;
+}
