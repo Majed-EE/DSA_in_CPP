@@ -1,2 +1,2 @@
 # basic_cpp
-followed by using combination of code with harry and implementation of cormen and sources
+CPP tutorials and notes with extension to DSA.
