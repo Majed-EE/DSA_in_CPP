@@ -115,22 +115,190 @@ using namespace std;
 
 
 // p8 reference variable-->, typecasting--> changing one variable to another
-float x=455;
-float & y=x;
-int main(){
-    cout<<y<<endl;
-    cout<<x<<endl;
-    int a = 45;
-    float b = 45.46;
-    cout<<"The value of a is "<<(float)a<<endl;
-    cout<<"The value of a is "<<float(a)<<endl;
-    cout<<"The value of b is "<<(int)b<<endl;
-    cout<<"The value of b is "<<int(b)<<endl;
-    int c = int(b);
-    cout<<"The expression is "<<a + b<<endl;
-    cout<<"The expression is "<<a + int(b)<<endl;
-    cout<<"The expression is "<<a + (int)b<<endl;
+// float x=455;
+// float & y=x;
+// int main(){
+//     cout<<y<<endl;
+//     cout<<x<<endl;
+//     int a = 45;
+//     float b = 45.46;
+//     cout<<"The value of a is "<<(float)a<<endl; // does both of it works
+//     cout<<"The value of a is "<<float(a)<<endl;
+//     cout<<"The value of b is "<<(int)b<<endl;
+//     cout<<"The value of b is "<<int(b)<<endl;
+//     int c = int(b);
+//     cout<<"The expression is "<<a + b<<endl;
+//     cout<<"The expression is "<<a + int(b)<<endl;
+//     cout<<"The expression is "<<a + (int)b<<endl;
     
 
+//     return 0;
+// }
+
+
+// p9 operator precedence and operator associativity 
+// Operator Precedence
+
+// int main(){
+// int a =3, b=4;
+// // int c = (a*5)+b;
+// int c = ((((a*5)+b)-45)+87);
+// cout<<c;
+// return 0;
+// }
+
+
+// important
+// p 10- if else, case, switch , loop, break, continue statement
+
+// int main() {
+//     int num;
+//     cout << "Enter a number: ";
+//     cin >> num;
+
+//     if (num > 0) {
+//         cout << "The number is positive.\n";
+//     } else if (num < 0) {
+//         cout << "The number is negative.\n";
+//     } else {
+//         cout << "The number is zero.\n";
+//     }
+
+//      for (int i = 1; i <= 5; i++) {
+//         cout << i << " ";
+
+//     }
+
+//      int i = 1;
+//     while (i <= 5) {
+//         cout << i << " ";
+//         i++;
+//     }
+
+
+//     do {
+//         cout << "Enter a positive number: ";
+//         cin >> num;
+//     } while (num <= 0);
+    
+//     cout << "You entered: " << num << endl;
+
+//     return 0;
+// }
+
+
+
+
+// pointers important
+
+// 12. Pointers in C++ | 12
+// The “&” operator is called “address off" operator, and the "*” operator is called “value at” dereference operator. 
+
+// int main(){
+//     int a=3;
+//     int*b=&a;
+//     int** c= &b;
+//     int k =4;
+//     int*l = &k; //l is a pointer to k if we say k= 4 then error
+//     cout<<"the address of b is "<<&b<<endl;
+//     cout<<"the address of b is (c): "<<c<<endl;
+//     cout<<"the value at address c is (address of a) "<<*c<<endl;
+//     cout<<"the value at address value_at(value_at(c)) is "<<**c<<endl;
+//     // cout<<"the vlaue at l** is "<<**l<<endl throws an error 
+//     return 0;
+// }
+
+// 13. Arrays & Pointers Arithmetic in C++ | 13-- 44
+// int main(){
+//     int marks[]={23,24,67,32};
+//     int *ptr=marks;
+//     cout<<"the value of marks[0] is "<<*ptr<<endl;
+//     cout<<"the value of marks[1] is "<<*(ptr+1)<<endl;
+//     cout<<"the value of marks[2] is "<<*(ptr+2)<<endl;
+//     cout<<"the value of marks[3] is "<<*(ptr+3)<<endl;
+//     return 0;
+// }
+
+
+// int main(){
+    
+//     return 0;
+// }
+
+
+// 14. Structures, Unions & Enums in C++ | 14
+// Define a struct
+struct Person {
+    string name;
+    int age;
+    float height;
+};
+typedef struct employee
+{
+    int eId;
+    char facChar;
+    float salary;
+
+}ep;
+
+// //application of struct
+// Used for data modeling (e.g., students, employees, vehicles).
+// Groups related attributes without requiring methods (unlike classes).
+// Can be used in linked lists, trees, and other data structures.
+
+// define union 
+union myUnion {
+    int i;
+    char car;
+    float f;
+};
+
+// //application of enum
+// Purpose: Groups multiple variables sharing the same memory space.
+// Memory: Allocates memory equal to the largest member.
+// Use Case: Useful when only one of the variables is needed at a time
+
+
+// // application of enum
+// Defining categories (e.g., colors, days, directions).
+// State management (e.g., traffic lights, game states).
+// Improves readability compared to using integer constants
+int main(){
+     // Create an instance of struct
+    Person p1;
+    ep harry;
+    // creating union
+    myUnion u;
+    //creating enumns
+    enum Meal{ breakfast, lunch, dinner};
+    
+    u.i=32;
+
+
+    cout<<"the value of i is "<<u.i<<endl;
+
+    harry.eId = 1;
+    harry.facChar = 'A';
+    harry.salary = 50000.0;
+
+    // Assign values to members
+    p1.name = "Alice";
+    p1.age = 25;
+    p1.height = 5.6;
+
+    // Print struct values
+    cout << "Name: " << p1.name << endl;
+    cout << "Age: " << p1.age << endl;
+    cout << "Height: " << p1.height << " feet" << endl;
+    
     return 0;
 }
+
+
+
+
+// 15. Functions & Function Prototypes in C++ |
+// 16. Call by Value & Call by Reference in C++ |
+// 17. Inline Functions, Default Arguments & Constant Arguments in C++ |
+// 18. Recursions & Recursive Functions in C++ |
+// 19. Function Overloading with Examples in C++ | 19
