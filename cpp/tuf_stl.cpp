@@ -101,4 +101,80 @@ vector<int>v(2,100); // (100,100)
 v.insert(v.begin(),300); // {300,100,100}
 v.insert(v.begin(),+1,2,10); // {300,10,10,100,100}
 
+vector<int> copy(2,50) // {50,50}
+v.insert(v.begin(),copy.begin(),copy.end()); // {50,50,300,10,10,100,100}
 
+// {10,20}
+cout<<v.size(); //2
+
+//{10,20}
+v.pop_back(); // {10}
+
+
+// v1-> {10,20}
+// v2 -> {30,40}
+v1.swap(v2); // swap v1 and v2
+v.clear(); // erases the entire vector
+
+cout<<v.empty(); // if empty it will say true
+
+}
+
+// next container -> list
+
+void explainList(){
+
+    list<int> ls;
+    ls.emplace_back(2); //{2}
+    ls.push_back(4); // {2,4}
+
+    ls.push_Front(5); // {5,2,4}
+
+    ls.emplace_front(); {2,4}; // {5,2,4,2,4} ??
+    // rest functions same as vector
+    // begin, end, rebeing,rend,clear, insert, size swap
+
+}
+
+
+void explainDeque(){
+
+    deque<int>dq;
+    dq.push_back(1); // {1}
+    dq.emplace_back(2); // {1,2}
+    dq.push_back(1); // {4,1,2}
+    dq.emplace_back(2); // {3,4,1,2}
+
+    dq.pop_back(); // {3,4,1}
+    dq.pop_front(); // {4,1}
+
+    dq.back();
+
+    dq.front();
+    
+}
+
+
+void explainStack() {
+    stack<int> st;
+    st.push(1); // {1}
+    st.push(2);
+    st.push(3);
+    st.push(3); // {3,3,2,1}
+    st.emplace(5); // {5,3,3,2,1}
+
+
+    cout<<st.top();
+
+    st.pop(); // {3,3,2,1}
+    cout<<st.top();
+    cout<<st.size(); // 4
+    cout<<st.empty();
+
+    stack<int> st1,st2;
+    st1.swap(st2)
+
+
+
+
+}
