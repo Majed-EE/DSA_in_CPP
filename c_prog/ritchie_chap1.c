@@ -56,38 +56,34 @@
 
 
 
-// int main()
-// {
-// int c, i, nwhite, nother;
-// int ndigit[10];
-// char str[] = "0 34";
-// nwhite = nother = 0;
-// for (i = 0; i < 10; ++i)
-//     ndigit[i] = 0;
-// for (i=0; str[i]!='\0'; i++)
-
-// {   c=str[i];
-//     printf("loop is %d\nstr is %s",i,str[i]) ;
-//     if (c >= '0' && c <= '9'){
-//        ++ndigit[c-'0'];
-//     //    printf("this ran");
-//     }
-//     else if (c == ' ' || c == '\n' || c == '\t')
-
-
-//         ++nwhite;
-//     else
-//         ++nother;
-// }
-// printf("digits =");
-// for (i = 0; i < 10; ++i)
-// {
-//     printf(" %d", ndigit[i]);
-//     printf(", white space = %d, other = %d\n",nwhite, nother);
-// }
-
-// return 0;
-// }
+int main()
+{
+int c, i, nwhite, nother;
+int ndigit[10];
+char str[] = "0 34j kdslflakds faskdf j25q423j "; // '\0-> null character
+nwhite = nother = 0;
+for (i = 0; i < 10; ++i)
+    ndigit[i] = 0;
+for (i=0; str[i]!='\0'; i++)
+{   c=str[i];
+    printf("loop is %d\nstr is %c",i,str[i]) ;
+    if (c >= '0' && c <= '9'){
+       ++ndigit[c-'0'];
+    //    printf("this ran");
+    }
+    else if (c == ' ' || c == '\n' || c == '\t')
+        ++nwhite;
+    else
+        ++nother;
+}
+printf("digits =");
+for (i = 0; i < 10; ++i)
+{
+    printf(" %d", ndigit[i]);
+    }
+printf(", white space = %d, other = %d\n",nwhite, nother);
+return 0;
+}
 
 // 1.6 arrays
 
