@@ -16,7 +16,7 @@ int main(){
 }
 
 
-
+// container pair, vector, array, set deque.. etc
 // Pairs
 
 void explainPAir(){
@@ -32,7 +32,7 @@ void explainPAir(){
 
 // vectors a container that is dynamic in nature 
 
-void explainVector(){
+void explainVector(){ // vector is a dynamic array
     vector<int> v; // vector datatype could be anything
     
     // how to insert data
@@ -55,7 +55,8 @@ void explainVector(){
     // how to access elements
     cout<<v[0]<<" "<<v.at(0) // what is the difference between .at(0) and [0]
     vector<int>::iterator it=v.begin(); // data structure<data type>::iterator --> it points to the memory address
-    
+    *(it++)
+    // *it++
     it++; // why not (*it++)
     cout <<*(it)<<" ";
 
